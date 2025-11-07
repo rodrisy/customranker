@@ -6,74 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elo Tournament</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
-    <script src="puff.js"></script>
 </head>
 
 <body>
-    <h1>Custom Ranker / Elo-based Ranker</a>
-    </h1>
+    <h1>Custom Ranker / Elo-based Ranker</h1>
     <p>Finally settle debates using the same ranking used by chess players.</p>
     <div style="height: 15px;"></div>
+
     <div id="setup">
-        <sub>Enter names seperated by a comma</sub>
-        <div> <input type="text" id="nameInput" placeholder="Jack, John, Joe, etc." />
-            <button class="animated-btn" onclick="startGame()">Start</button>
+        <sub>Enter items separated by a comma</sub>
+        <div>
+            <input type="text" id="nameInput" placeholder="Burger, Sushi, Pizza, etc."
+                oninput="updateRoundSuggestion()" />
         </div>
+
+        <div>
+            <label for="roundsInput" style="color: white;">Number of Rounds:</label>
+            <input type="number" id="roundsInput" min="1" placeholder="Auto-suggested" />
+            <div id="roundsSuggestion"></div>
+        </div>
+
+        <button class="animated-btn" onclick="startGame()">Start</button>
     </div>
 
     <div id="game" style="display:none;">
         <h2 id="roundTitle">Round 1</h2>
+
+        <div class="progress-container">
+            <div class="progress-bar-wrapper">
+                <div class="progress-bar" id="progressBar" style="width: 0%;">0%</div>
+            </div>
+            <div class="progress-text" id="progressText">Match 1 of 5</div>
+        </div>
+
         <div id="matchup">
             <button class="player-button blue animated-btn" id="player1" onclick="selectWinner(1)">Player 1</button>
             <button class="player-button green animated-btn" id="player2" onclick="selectWinner(2)">Player 2</button>
         </div>
     </div>
 
-
     <div id="leaderboard" style="display:none;">
         <h2>🏆 Final Elo Leaderboard</h2>
 
-        <!-- podium design -->
         <div class="podium">
             <div class="podium-2 podium-ind">
                 <div class="name-placement">
-                    <h2 id="secondPlace"></h2>
+                    <h2 id="secondPlace">-</h2>
                 </div>
                 <div class="medal-gap" style="z-index: 2;">
-                    <img src="silvermedal.png" style="height: 60px;">
+                    <div style="font-size: 60px;">🥈</div>
                 </div>
                 <div class="rest-of-info">
-                    <h1 id="secondPlace-points"></h1>
-                    <h3 id="secondPlace-ranking"></h3>
+                    <h1 id="secondPlace-points">-</h1>
+                    <h3 id="secondPlace-ranking">-</h3>
                 </div>
             </div>
             <div class="podium-1 podium-ind">
                 <div class="name-placement">
-                    <h2 id="firstPlace"></h2>
+                    <h2 id="firstPlace">-</h2>
                 </div>
                 <div class="medal-gap" style="z-index: 2;">
-                    <img src="goldmedal.png" style="height: 60px;">
+                    <div style="font-size: 60px;">🥇</div>
                 </div>
                 <div class="rest-of-info">
-                    <h1 id="firstPlace-points"></h1>
-                    <h3 id="firstPlace-ranking"></h3>
+                    <h1 id="firstPlace-points">-</h1>
+                    <h3 id="firstPlace-ranking">-</h3>
                 </div>
             </div>
             <div class="podium-3 podium-ind">
                 <div class="name-placement">
-                    <h2 id="thirdPlace"></h2>
+                    <h2 id="thirdPlace">-</h2>
                 </div>
                 <div class="medal-gap" style="z-index: 2;">
-                    <img src="bronzemedal.png" style="height: 60px;">
+                    <div style="font-size: 60px;">🥉</div>
                 </div>
                 <div class="rest-of-info">
-                    <h1 id="thirdPlace-points"></h1>
-                    <h3 id="thirdPlace-ranking"></h3>
+                    <h1 id="thirdPlace-points">-</h1>
+                    <h3 id="thirdPlace-ranking">-</h3>
                 </div>
             </div>
         </div>
-        <!--  -->
+
         <div style="height: 25px;"></div>
         <div>
             <button onclick="restart()" class="player-button red animated-btn">Restart</button>
@@ -83,6 +96,8 @@
             <ul id="leaderboardList"></ul>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -53,16 +53,12 @@ ul {
     overflow-x: auto;
     white-space: nowrap;
     padding-bottom: 10px;
-    /* optional: adds space for scrollbar */
     scroll-snap-type: x mandatory;
-    /* optional: snap scrolling */
 }
 
 ul li {
     flex: 0 0 auto;
-    /* prevent shrinking */
     scroll-snap-align: start;
-    /* optional: align snapping */
 }
 
 li {
@@ -144,7 +140,6 @@ li {
     align-items: flex-end;
     margin: auto;
     justify-content: space-between;
-
 }
 
 .name-placement {
@@ -173,7 +168,6 @@ li {
     flex-direction: column;
     display: flex;
     width: 250px;
-
 }
 
 .medal-gap {
@@ -204,6 +198,55 @@ sub {
     color: white;
 }
 
+/* Progress Bar Styles */
+.progress-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.progress-bar-wrapper {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    height: 30px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+    transition: width 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+}
+
+.progress-text {
+    text-align: center;
+    font-size: 0.9em;
+    color: white;
+    opacity: 0.9;
+}
+
+/* Round input styles */
+#roundsSuggestion {
+    font-size: 0.85em;
+    color: #ffd700;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+input[type="number"] {
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
 
 @media (max-width: 768px) {
     .podium-ind {
@@ -212,7 +255,6 @@ sub {
 }
 
 @media (max-width: 480px) {
-
     .podium-ind {
         width: 100px;
     }
