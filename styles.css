@@ -109,6 +109,9 @@ li {
 
 .animated-btn {
     animation: pop 0.3s ease;
+    padding-inline: 2rem;
+    padding-block: 0.7rem;
+    border-radius: 15px;
 }
 
 @keyframes pop {
