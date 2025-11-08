@@ -14,14 +14,14 @@
     <div style="height: 15px;"></div>
 
     <div id="setup">
-        <sub>Enter items separated by a comma</sub>
+        <label>Enter items separated by a comma</label>
         <div>
             <input type="text" id="nameInput" placeholder="Burger, Sushi, Pizza, etc."
                 oninput="updateRoundSuggestion()" />
         </div>
 
         <div>
-            <label for="roundsInput" style="color: white;">Number of Rounds:</label>
+            <label for="roundsInput">Number of Rounds:</label>
             <input type="number" id="roundsInput" min="1" placeholder="Auto-suggested" />
             <div id="roundsSuggestion"></div>
         </div>
