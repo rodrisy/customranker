@@ -1,8 +1,15 @@
 body {
     font-family: sans-serif;
     padding: 2rem;
-    background-color: #46178F;
+    background-color: whitesmoke;
+    display: grid;
     text-align: center;
+    place-items: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 36px;
 }
 
 input,
@@ -202,6 +209,7 @@ h4,
 p,
 sub {
     color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /* Progress Bar Styles */
